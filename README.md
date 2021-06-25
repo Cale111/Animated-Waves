@@ -1,4 +1,4 @@
-# Animated Waves
+# Wave
 This is a web browser extension that replaces the new tab page with animated waves and gradient backgrounds.
 
 Unfortunately at this time this extension can only use the search with Google. This will be fixed in a later update.
