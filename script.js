@@ -24,6 +24,7 @@ setTimeout(function(){ background.classList.add('fadein'); }, 500)
 setTimeout(function(){
     search.classList.add('fadein');
     search.classList.add('fullwidth');
+    menubutton.classList.add('fadein');
 }, 2000)
 
 // Expand search bar when typing
@@ -42,7 +43,7 @@ input.addEventListener("focusout", searchUnFocused);
 document.onmousemove = function() {
     search.classList.add('fadein');
     search.classList.add('fullwidth');
-    menubutton.classList.add('fadein')
+    menubutton.classList.add('fadein');
     document.body.style.cursor = 'auto';
     clearTimeout(timeout);
 
