@@ -2,6 +2,11 @@
 var background = document.getElementById('background');
 var search = document.getElementById('search');
 var input = document.getElementById('input');
+var colorpicker = document.getElementById('colorpicker');
+var colorpicker2 = document.getElementById('colorpicker2');
+var colorpickerMenu = document.getElementById('colorpicker-menu');
+var resetbutton = document.getElementById('resetbutton');
+var root = document.documentElement;
 // Timeout for mouse movement
 var timeout;
 
@@ -41,4 +46,35 @@ document.onmousemove = function() {
         }
         document.body.style.cursor = 'none';
     }, 5000)
+}
+
+resetbutton.addEventListener("click", resetColors)
+
+function resetColors() {
+    colorpicker.value = "#87005d";
+    colorpicker2.value = "#ff4040";
+    updateGradient()
+}
+
+colorpicker.addEventListener("input", updateGradient)
+colorpicker2.addEventListener("input", updateGradient)
+
+function updateGradient() {
+    var c = colorpicker.value;
+
+    var c = c.substring(1);
+    var rgb = parseInt(c, 16);
+    var r = (rgb >> 16) & 0xff;
+    var g = (rgb >> 8) & 0xff;
+    var b = (rgb >> 0) & 0xff;
+
+    var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+
+    if (luma > 200) {
+        root.style.setProperty('--main-color', '0, 0, 0');
+    } else {
+        root.style.setProperty('--main-color', '255, 255, 255');
+    }
+    background.style.background = "linear-gradient(-135deg, " + colorpicker.value + " 25%, " + colorpicker2.value + " 100%)";
+    colorpickerMenu.style.background = "linear-gradient(-135deg, " + colorpicker.value + " 25%, " + colorpicker2.value + " 100%)";
 }
