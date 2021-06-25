@@ -12,6 +12,18 @@ setTimeout(function(){
     search.classList.add('fullwidth');
 }, 2000)
 
+// Expand search bar when typing
+function searchFocused() {
+    search.classList.add('focused');
+}
+
+function searchUnFocused() {
+    search.classList.remove('focused');
+}
+
+input.addEventListener("focusin", searchFocused);
+input.addEventListener("focusout", searchUnFocused);
+
 // Show ui when mouse moved
 document.onmousemove = function() {
     search.classList.add('fadein');
