@@ -89,7 +89,7 @@ body {
     align-content: center;
     gap: 10px;
     background: rgba(var(--main-color), 0.1);
-    /*backdrop-filter: blur(25px);*/
+    backdrop-filter: blur(10px);
     z-index: 4;
     transition: 0.5s;
 }
@@ -101,20 +101,31 @@ body {
 /*Menu Button*/
 
 .menubutton {
-    width: 48px;
-    height: 48px;
+    width: 0;
+    height: 0;
+    margin: 48px;
     position: fixed;
     right: 0;
     background: transparent;
-    border: 2px solid rgba(var(--main-color), 0.35);
-    margin: 25px;
+    border: 2px solid transparent;
     border-radius: 26px;
     z-index: 4;
     transition: 0.5s;
 }
 
-.menubutton.expanded {
-    transform: translateX(-300px);
+.menubutton:hover {
+    border: 2px solid rgba(var(--main-color), 0.25);
+}
+
+.menubutton.fadein {
+    width: 48px;
+    height: 48px;
+    margin: 25px;
+    border: 2px solid rgba(var(--main-color), 0.35);
+}
+
+.menubutton:active {
+    border: 2px solid rgba(var(--main-color), 0.15);
 }
 
 /*Color Picker*/

@@ -42,6 +42,7 @@ input.addEventListener("focusout", searchUnFocused);
 document.onmousemove = function() {
     search.classList.add('fadein');
     search.classList.add('fullwidth');
+    menubutton.classList.add('fadein')
     document.body.style.cursor = 'auto';
     clearTimeout(timeout);
 
@@ -50,6 +51,9 @@ document.onmousemove = function() {
         if (input && input.value) {
             search.classList.remove('fadein')
         } else {
+            if (expanded == 0) {
+                menubutton.classList.remove('fadein')
+            }
             search.classList.remove('fadein')
             search.classList.remove('fullwidth')
         }
