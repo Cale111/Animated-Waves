@@ -34,11 +34,32 @@ body {
 }
 
 .search {
-    width: 50%;
-    background: rgba(var(--main-color), 0.35);
+    width: 0;
+    background: transparent;
     overflow: hidden;
     border-radius: 25px;
     z-index: 9999;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.search:hover {
+    background: rgba(var(--main-color), 0.2);
+}
+
+.search.fadein {
+    background: rgba(var(--main-color), 0.35);
+    
+}
+
+.search.fullwidth {
+    width: 50vw;
+}
+
+.search.focused {
+    border-radius: 15px;
+    background: transparent;
+    width: 100vw;
 }
 
 .search form input {
