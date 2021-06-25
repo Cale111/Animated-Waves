@@ -6,9 +6,18 @@ var colorpicker = document.getElementById('colorpicker');
 var colorpicker2 = document.getElementById('colorpicker2');
 var colorpickerMenu = document.getElementById('colorpicker-menu');
 var resetbutton = document.getElementById('resetbutton');
+var menu = document.getElementById('menu');
+var menubutton = document.getElementById('menubutton');
 var root = document.documentElement;
+var expanded = 0;
+
 // Timeout for mouse movement
 var timeout;
+
+// Load colours
+window.onload = function() {
+    updateGradient()
+}
 
 // Startup fade in animation
 setTimeout(function(){ background.classList.add('fadein'); }, 500)
@@ -46,6 +55,18 @@ document.onmousemove = function() {
         }
         document.body.style.cursor = 'none';
     }, 5000)
+}
+
+menubutton.addEventListener("click", expandMenu)
+
+function expandMenu() {
+    if (expanded == 0) {
+        menu.classList.add('expanded');
+        expanded = 1;
+    } else {
+        menu.classList.remove('expanded');
+        expanded = 0;
+    }
 }
 
 resetbutton.addEventListener("click", resetColors)
