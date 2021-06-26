@@ -14,7 +14,6 @@ body {
     height: 100%;
     position: absolute;
     opacity: 0;
-    /*background: linear-gradient(-135deg, #87005d, #ff4040);*/ /*temporary test gradient, not final*/
     -webkit-transition: 4s;
     transition: 4s;
 }
@@ -168,7 +167,7 @@ input::-moz-color-swatch {
     height: 100%;
 }
 
-/*Resets the colours to default*/
+/*Reset Colors Button*/
 
 .resetbutton {
     text-align: center;
