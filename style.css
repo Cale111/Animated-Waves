@@ -115,6 +115,7 @@ body {
 
 .menubutton:hover {
     border: 2px solid rgba(var(--main-color), 0.25);
+    cursor: pointer;
 }
 
 .menubutton.fadein {
