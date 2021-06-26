@@ -16,12 +16,12 @@ var timeout;
 
 // Load colours
 window.onload = function() {
+    // browser.storage.sync on Firefox
     chrome.storage.sync.get({'color1':'#87005d', 'color2':'#ff4040'}, function(result) {
         colorpicker.value = result.color1;
         colorpicker2.value = result.color2;
         updateGradient();
     });
-    
 }
 
 // Startup fade in animation
@@ -114,5 +114,6 @@ function updateGradient() {
 }
 
 function saveColor() {
+    // browser.storage.sync on Firefox
     chrome.storage.sync.set({'color1':colorpicker.value, 'color2':colorpicker2.value});
 }
