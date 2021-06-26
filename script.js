@@ -19,8 +19,9 @@ window.onload = function() {
     chrome.storage.sync.get({'color1':'#87005d', 'color2':'#ff4040'}, function(result) {
         colorpicker.value = result.color1;
         colorpicker2.value = result.color2;
-    })
-    updateGradient();
+        updateGradient();
+    });
+    
 }
 
 // Startup fade in animation
@@ -113,5 +114,5 @@ function updateGradient() {
 }
 
 function saveColor() {
-    chrome.storage.sync.set({'color1':colorpicker.value, 'color2':colorpicker2.value})
+    chrome.storage.sync.set({'color1':colorpicker.value, 'color2':colorpicker2.value});
 }

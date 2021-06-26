@@ -151,7 +151,7 @@ input::-webkit-color-swatch {
     outline: none;
     border-radius: 24px;
     width: 100%;
-    height: 100%;
+    height: 90%;
 }
 
 input::-moz-color-swatch {
