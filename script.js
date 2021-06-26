@@ -16,7 +16,11 @@ var timeout;
 
 // Load colours
 window.onload = function() {
-    updateGradient()
+    chrome.storage.sync.get({'color1':'#87005d', 'color2':'#ff4040'}, function(result) {
+        colorpicker.value = result.color1;
+        colorpicker2.value = result.color2;
+    })
+    updateGradient();
 }
 
 // Startup fade in animation
@@ -80,10 +84,13 @@ function resetColors() {
     colorpicker.value = "#87005d";
     colorpicker2.value = "#ff4040";
     updateGradient()
+    saveColor()
 }
 
 colorpicker.addEventListener("input", updateGradient)
+colorpicker.addEventListener("change", saveColor)
 colorpicker2.addEventListener("input", updateGradient)
+colorpicker2.addEventListener("change", saveColor)
 
 function updateGradient() {
     var c = colorpicker.value;
@@ -103,4 +110,8 @@ function updateGradient() {
     }
     background.style.background = "linear-gradient(-135deg, " + colorpicker.value + " 25%, " + colorpicker2.value + " 100%)";
     colorpickerMenu.style.background = "linear-gradient(-135deg, " + colorpicker.value + " 25%, " + colorpicker2.value + " 100%)";
+}
+
+function saveColor() {
+    chrome.storage.sync.set({'color1':colorpicker.value, 'color2':colorpicker2.value})
 }
