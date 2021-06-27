@@ -6,7 +6,6 @@ Unfortunately at this time this extension can only use the search with Google. T
 It is currently available on:
 
 - [Chrome](https://chrome.google.com/webstore/detail/animated-waves/jgohabjfpkldfcenkgbpddfbdnfjgnal)
-
-Coming soon to Firefox.
+- [Firefox](https://addons.mozilla.org/addon/animated-waves/)
 
 This extension takes some CSS and the wave SVG graphic from [this repository](https://github.com/DAGINATSUKO/www-rpcs3).
