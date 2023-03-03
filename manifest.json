@@ -2,11 +2,10 @@
     "manifest_version": 2,
     "name": "Wave",
     "description": "An extension that replaces the new tab page with animated waves and gradient backgrounds.",
-    "version": "3.0.3",
+    "version": "3.0.4",
     "icons": {"128": "icon_128.png"},
     "browser_action": {
-        "default_icon": "icon.png",
-        "default_popup": "popup.html"
+        "default_icon": "icon.png"
     },
     "chrome_url_overrides" : {
         "newtab": "index.html"
