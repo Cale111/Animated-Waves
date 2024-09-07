@@ -14,14 +14,6 @@ var expanded = 0;
 // Timeout for mouse movement
 var timeout;
 
-// Use default search engine to perform a web search (Chrome)
-document.getElementById("searchForm").addEventListener('submit', e => {
-	e.preventDefault();
-	if (e.currentTarget.query.value != '') {
-		chrome.search.query({ text: e.currentTarget.query.value })
-	}
-})
-
 // Load colours
 window.onload = function() {
     chrome.storage.sync.get({'color1':'#87005d', 'color2':'#ff4040'}, function(result) {
